@@ -24,9 +24,10 @@ docker pull angibvg/barcode:latest
 Next, launch the container and mount your working directory:
 
 ```bash
-docker run -it -v /path/to/your/folder:/data -w /data angibvg/barcode
+docker run --platform your_platform -it -v /path/to/your/folder:/data -w /data angibvg/barcode
 ```
 
+- `--platform`: Select your platform (e.g., linux/amd64).
 - `-v`: Mounts the host directory /path/to/your/folder into the container at /data, so all files you put in that host folder are accessible (and writable) inside the container.
 - `-w`: Sets the working directory inside the container to /data, so the container’s shell or entry‑point will start in that folder.
 
@@ -56,7 +57,7 @@ No additional structure is required. The pipeline will create a `results/` direc
 To run the entire pipeline, which includes quality control, dereplication, annotation, defense system detection, and core/quasi-core analysis, use the following command:
 
 ```bash
-bash BARCODE.sh -i /path/to/INPUT_DIR -t 12 -g 10
+./BARCODE.sh -i INPUT_DIR/ -t 12 -g 10
 ```
 
 **Options:**
@@ -119,3 +120,4 @@ Note: The Species_A_core.txt and Species_A_qscore.txt files will only be created
 - `Species_A_defense_systems_percentages_presence.tsv`: A table showing the percentage presence of each defense system across the genomes of Species A.
 - `Species_A_core.txt`: A list of defense systems present in all genomes of Species A (core defense systems).
 - `Species_A_qscore.txt`: A list of defense systems present in a high percentage of genomes, but not necessarily all (quasi-core defense systems).
+  
