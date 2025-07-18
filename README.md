@@ -18,13 +18,13 @@ To run this pipeline use the pre-built **Docker image** that includes both requi
 First, ensure that Docker is installed and running on your system. Then, load the Docker image:
 
 ```bash
-docker load -i BARCODE.tar
+docker pull angibvg/barcode:latest
 ```
 
 Next, launch the container and mount your working directory:
 
 ```bash
-docker run -it -v /path/to/your/folder:/data -w /data barcode
+docker run -it -v /path/to/your/folder:/data -w /data angibvg/barcode
 ```
 
 - `-v`: Mounts the host directory /path/to/your/folder into the container at /data, so all files you put in that host folder are accessible (and writable) inside the container.
