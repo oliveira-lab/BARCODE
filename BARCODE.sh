@@ -95,7 +95,7 @@ run_checkm() {
   mkdir -p "$out"
 
   echo "Running CheckM lineage_wf for $sp…"
- # checkm taxonomy_wf domain Bacteria -x fna -t "$THREADS" "$species_dir" "$out"
+  checkm taxonomy_wf domain Bacteria -x fna -t "$THREADS" "$species_dir" "$out"
 
   local stats="$out/storage/bin_stats_ext.tsv"
   [[ -s "$stats" ]] || { echo "$stats not found or empty"; return 1; }
@@ -147,7 +147,7 @@ run_drep() {
   mkdir -p "$out"
 
   echo "Running dRep dereplicate for $sp…"
-#  dRep dereplicate "$out" -g "$species_dir"/*.fna -pa $ANI_THRESH --skip_plots --ignoreGenomeQuality
+  dRep dereplicate "$out" -g "$species_dir"/*.fna -pa $ANI_THRESH --skip_plots --ignoreGenomeQuality
 
   local wdb="$out/data_tables/Wdb.csv"
   if [[ ! -f "$wdb" ]]; then
@@ -204,7 +204,7 @@ run_prokka() {
   for f in "$species_dir"/*.fna; do
     base=${f##*/}
     base=${base%.fna}
-#    prokka "$f" --outdir "$out/$base" --prefix "$base" --cpus "$THREADS"
+    prokka "$f" --outdir "$out/$base" --prefix "$base" --cpus "$THREADS"
   done
 }
 
@@ -217,7 +217,7 @@ run_defense() {
   echo "Running DefenseFinder for $sp…"
   find "$prokka_dir" -name "*.faa" | while read -r faa; do
     sub=$(basename "$(dirname "$faa")")
-#    defense-finder run "$faa" -o "$out/$sub" --models-dir /opt/defense-finder-models
+    defense-finder run "$faa" -o "$out/$sub" --models-dir /opt/defense-finder-models
   done
 }
 
