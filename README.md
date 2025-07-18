@@ -15,7 +15,7 @@ To run this pipeline use the pre-built **Docker image** that includes both requi
 - **core_quasicore_pipeline**: For quality control, dereplication, annotation, and defense system detection.
 - **core_quasicore_analysis**: For core and quasi-core analysis.
 
-First, ensure that Docker is installed and running on your system. Then, load the Docker image:
+First, ensure that Docker is installed and running on your system. Then, pull the Docker image:
 
 ```bash
 docker pull angibvg/barcode:latest
