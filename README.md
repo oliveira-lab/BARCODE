@@ -65,6 +65,7 @@ bash BARCODE.sh -i /path/to/INPUT_DIR -t 12 -g 10
 - `-g MIN_GENOMES`: (Optional) Minimum number of genomes to retain per species after quality control and dereplication (default is 2).
 
 
+
 **Pipeline Steps:**
 
 1. **Quality Control (CheckM)**
