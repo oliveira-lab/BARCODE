@@ -24,7 +24,7 @@ docker load -i BARCODE.tar
 Next, launch the container and mount your working directory:
 
 ```bash
-docker run -it -v /path/to/your/folder:/data -w /data BARCODE
+docker run -it -v /path/to/your/folder:/data -w /data barcode
 ```
 
 - `-v`: Mounts the host directory /path/to/your/folder into the container at /data, so all files you put in that host folder are accessible (and writable) inside the container.
