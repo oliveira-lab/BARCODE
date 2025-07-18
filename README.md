@@ -12,8 +12,8 @@ BARCODE is a pipeline for analyzing bacterial genomes to identify core and quasi
 ## 1. Environment Preparation
 
 To run this pipeline use the pre-built **Docker image** that includes both required environments:
-- **core_quasicore_pipeline**: For quality control, dereplication, annotation, and defense system detection.
-- **core_quasicore_analysis**: For core and quasi-core analysis.
+- **BARCODE_pipeline**: For quality control, dereplication, annotation, and defense system detection.
+- **BARCODE_analysis**: For core and quasi-core analysis.
 
 First, ensure that Docker is installed and running on your system. Then, pull the Docker image:
 
