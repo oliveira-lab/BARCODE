@@ -27,8 +27,8 @@ Next, launch the container and mount your working directory:
 docker run -it -v /path/to/your/folder:/data -w /data BARCODE
 ```
 
--v: Mounts the host directory /path/to/your/folder into the container at /data, so all files you put in that host folder are accessible (and writable) inside the container.
--w: Sets the working directory inside the container to /data, so the container’s shell or entry‑point will start in that folder.
+- `-v`: Mounts the host directory /path/to/your/folder into the container at /data, so all files you put in that host folder are accessible (and writable) inside the container.
+- `-w`: Sets the working directory inside the container to /data, so the container’s shell or entry‑point will start in that folder.
 
 ## 2. Pipeline Usage
 
